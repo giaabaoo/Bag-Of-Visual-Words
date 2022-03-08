@@ -1,0 +1,5 @@
+rootsift_features_path: "./preprocessed_data/rootsift_features.json"
+kmeans_model_path: "./model/model.pkl"
+img_path: "./data/images"
+query: "./preprocessed_data/queries.json"
+k: 5
