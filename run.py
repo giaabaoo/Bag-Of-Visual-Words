@@ -19,6 +19,7 @@ def computeSIFT(image_path):
     if os.path.exists(image_path):
         # print("image path: ", image_path)
         image = cv2.imread(image_path)
+        image = cv2.resize(image,(250,250))
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
         sift = cv2.SIFT_create()
@@ -140,7 +141,6 @@ def evaluate_oxford_dataset(config):
         query_name = query.split("/")[-1]
 
         for k, v in top_k_results.items():
-            pdb.set_trace()
             if query_name in k:
                 accuracy += 1 
             break
@@ -149,7 +149,7 @@ def evaluate_oxford_dataset(config):
 
 
 if __name__ == '__main__':
-    config = load_config("./config/default_copy.yaml")
+    config = load_config("./config/default.yaml")
 
     if os.path.exists(config['rootsift_features_path']):
         print("Evaluating on Oxford 5K dataset")
@@ -158,7 +158,7 @@ if __name__ == '__main__':
         print("Clustering visual features...")
         data, kmeans, no_clusters = extract_visual_features(config['img_path'])
         print("Number of clusters: ", no_clusters)
-        Path("./model").mkdir(parents=True, exist_ok=True)
+        Path("../model").mkdir(parents=True, exist_ok=True)
         pickle.dump(kmeans, open("./model/model.pkl", "wb"))
 
         with open(config['rootsift_features_path'], "w") as f:
