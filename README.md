@@ -38,6 +38,8 @@ Evaluation on Oxford dataset are conducted by searching and evaluating on the qu
 python process_data.py
 ```
 
+### Configs
+There are two configs in this repo. One is ```default.yaml``` for the Oxford dataset and the other one is used for mock data.
 
 ### Running the code
 
@@ -49,6 +51,8 @@ In case there have not been any saved features. The feature extractors and kmean
 
 Otherwise, searching will be conducted due to the queries in  ```preprocessed_data/queries.json``` and evaluate on this set using TF-IDF representations for a vector space model to search using top k nearest neighbours algorithm. 
 
-### Configs
-There are two configs in this repo. One is ```default.yaml``` for the Oxford dataset and the other one is used for mock data.
+### Experimental results for Oxford 5K dataset
+Number of clusters:  4
+Accuracy on 55 queries at top 1: 100.0%
+Elapsed time: 4 minutes on 55 queries
 
