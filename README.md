@@ -52,7 +52,7 @@ In case there have not been any saved features. The feature extractors and kmean
 Otherwise, searching will be conducted due to the queries in  ```preprocessed_data/queries.json``` and evaluate on this set using TF-IDF representations for a vector space model to search using top k nearest neighbours algorithm. 
 
 ### Experimental results for Oxford 5K dataset
-Number of clusters:  4
-Accuracy on 55 queries at top 1: 100.0%
-Elapsed time: 4 minutes on 55 queries
+Number of clusters:  4 </br>
+Accuracy on 55 queries at top 1: 100.0% </br>
+Elapsed time: 4 minutes on 55 queries </br>
 
